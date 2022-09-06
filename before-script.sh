@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -e
-set -x
 mkdir -p /root/.cache/unity3d
 mkdir -p /root/.local/share/unity3d/Unity/
 set +x
@@ -10,7 +8,7 @@ unity_license_destination=/root/.local/share/unity3d/Unity/Unity_lic.ulf
 android_keystore_destination=keystore.keystore
 
 echo $UNITY_LICENSE > license.txt
-export UNITY_LICENSE=$(base64 -d license.txt)
+export UNITY_LICENSE=$(base64 -di license.txt)
 
 upper_case_build_target=${BUILD_TARGET^^};
 
