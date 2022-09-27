@@ -6,8 +6,8 @@ IMAGE_VERSION=1.0.1 # https://github.com/game-ci/docker/releases
 DOCKER_IMAGE=$IMAGE:$UNITY_VERSION-android-$IMAGE_VERSION
 
 docker run -it --rm \
-  -e "UNITY_USERNAME=quannlm@vng.com.vn" \
-  -e "UNITY_PASSWORD=nRmlmq.2o01/,unity" \
+  -e "UNITY_USERNAME=$1" \
+  -e "UNITY_PASSWORD=$2" \
   -w /project/ \
   -v "$(pwd):/project" \
   $DOCKER_IMAGE \
